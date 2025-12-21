@@ -1,0 +1,74 @@
+body{
+            box-sizing: border-box;
+            background-color: #E6F0FF;
+        }
+        .signup-input{
+            height:35px;
+            width:250px;
+            margin-top: 10px;
+        }
+        .signup-input::placeholder{
+            text-align: center;
+        }
+        #signup-btn{
+            margin-top: 10px;
+            margin-left: 60px;
+            width: 120px;
+            height: 35px;
+            border-radius: 10px;
+            color: white;
+            background-color: #FF4422;
+            border: #FF4422;
+        }
+        #welcomeuser{
+            color: white;
+        }
+        #sign-in-anchor{
+            text-decoration: none;
+            border:1px solid white;
+            padding: 10px;
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            border-radius: 10px;   
+            color: white;
+        }
+        .container{
+            display: flex;
+            margin-left:px;
+            margin-right: 50px;
+            margin-top: 80px;
+        }
+        #signup-show{
+            border:1px solid #FF4422;
+            padding:50px;
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+        }
+        #signupform{
+            padding: 30px;
+            background: #fff; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1)
+        }
+        .pcontentsignup{
+            color: white;
+            font-size: large;
+        }
+        #heading{
+            padding: 60px;
+            color: #1A237E;
+        }
+        #demo{
+            text-decoration: none;
+        }
+        #quote{
+            color: #E74C3C;
+            
+        }
+        h4{
+            color: #2C3E50;
+            background-color: #FDF6E3;
+            margin-top: 30px;
+        }
+        #passwordwrong{
+            color:red;
+        }

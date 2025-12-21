@@ -1,0 +1,88 @@
+body {
+  margin: 20px;
+  background: #f5f5f5;
+  font-family: Segoe UI, Tahoma, Verdana, sans-serif;
+  color: #222;
+}
+
+#backBtn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#title {
+  text-align: center;
+}
+
+#kpiRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.kpi {
+  flex: 1 1 200px;
+  min-width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kpi-name {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.kpi-value {
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+.kpi-blue {
+  background: #4f46e5;
+}
+
+.kpi-green {
+  background: #16a34a;
+}
+
+.kpi-orange {
+  background: #f97316;
+}
+
+.kpi-rose {
+  background: #e11d48;
+}
+
+#charts {
+  display: flex;
+}
+
+#charts2 {
+  display: flex;
+}
+
+#joinsChart {
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+#ontimeChart {
+  margin-top: 40px;
+  margin-left: 120px;
+}
+
+#revenueChart {
+  margin-top: 40px;
+  margin-left: 100px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email OTP Verification</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/fffd359068.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="userlogin.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome Admin 👋</h2>
+    <p id="info-text">Enter your email to continue</p>
+
+    <!-- Email Form -->
+    <div id="email-section">
+      <input type="email" id="email" placeholder="Enter your Email">
+      <button class="btn" id="email-btn" onclick="emailotp(event)">Continue with Email</button>
+      <p class="error hidden" id="error-msg">⚠ Please enter a valid email</p><br><br>
+    </div>
+
+    <!-- OTP Section -->
+    <div id="otp-section" class="hidden">
+        <i class="fa-solid fa-arrow-left" id="back"></i><br>
+      <p>We have sent an OTP to your email.</p>
+      <div class="otp-inputs">
+        <input type="text" id="1" maxlength="1">
+        <input type="text" id="2" maxlength="1">
+        <input type="text" id="3" maxlength="1">
+        <input type="text" id="4" maxlength="1">
+      </div>
+      <button class="btn" onclick="login(event)">Verify</button><br><br>
+      <div class="resend">Didn’t receive the OTP? <a onclick="resendotp(event)" id="resend">Resend</a></div>
+    </div>
+  </div> 
+
+  <script src="userlogin.js"> </script>
+</body>
+</html>

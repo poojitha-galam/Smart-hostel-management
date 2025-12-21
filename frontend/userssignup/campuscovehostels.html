@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="campuscovehostels.css">
+</head>
+<body>
+    <div class="marquee-container">
+  <marquee>We are happy to inform you that we are ranked top 3 quality food maintain awards by fssai</marquee>
+</div>
+
+    <div class="container">
+        <div id="heading">
+            <br><br><br><br><br><br>
+                <h2>Campus Cove Hostels</h2>
+                <h4>“Your home away from home, without the price tag.”</h4>
+        </div>
+    <div id="signup-show">
+        <h1 id="welcomeuser">WELCOME BACK!</h1>
+        <p class="pcontentsignup">To keep connected with us please login</p>
+        <p class="pcontentsignup">with your personal info</p><br><br>
+        <a href="http://127.0.0.1:5500/frontend/userslogin/campuscovehostels.html" id="sign-in-anchor">SIGN IN</a>
+    </div>
+    <div id="signupform">
+        <h1>Create Account</h1>
+        <form onsubmit="save(event)">
+            <input type="text" id="signup-mobile" class="signup-input" placeholder="Mobile Number" autocomplete="off" required><br>
+            <input type="password" id="signup-password" class="signup-input" placeholder="Password" required><br>
+            <input type="password" id="signup-repassword" class="signup-input" placeholder="Re Enter Password" required>
+            <p id="passwordwrong"></p>
+            <button id="signup-btn">SIGN UP</button>
+        </form>
+
+    </div>
+    </div><br><br>
+   <small><a>Privacy & Policy  |</a></small>
+   <small> <a style="margin-left: 10px;">T&C   |</a></small>
+   <small style="margin-left: 10px;"><a id="demo" href="mailto:218x1a0482@khitguntur.ac.in">help@campuscovehostels.com</a></small>
+   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
+<script src="campuscovehostels.js"></script>
+
+</body>
+</html>

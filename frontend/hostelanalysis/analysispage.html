@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hostel Analysis</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="analysis.css">
+</head>
+<body>
+  <button id="backBtn" type="button">Back</button>
+
+  <h3 id="title">Analysis</h3>
+
+  <div id="kpiRow">
+    <div class="kpi kpi-blue">
+      <div class="kpi-name">Total Members</div>
+      <div id="kpiTotal" class="kpi-value">-</div>
+    </div>
+
+    <div class="kpi kpi-green">
+      <div class="kpi-name">New Joins (This Month)</div>
+      <div id="kpiJoins" class="kpi-value">-</div>
+    </div>
+
+    <div class="kpi kpi-orange">
+      <div class="kpi-name">Revenue (This Month)</div>
+      <div id="kpiRevenue" class="kpi-value">₹0</div>
+    </div>
+
+    <div class="kpi kpi-rose">
+      <div class="kpi-name">On-Time Payments %</div>
+      <div id="kpiOntime" class="kpi-value">-</div>
+    </div>
+  </div>
+
+  <div id="charts">
+    <canvas id="joinsChart" width="420" height="300"></canvas>
+    <canvas id="ontimeChart" width="320" height="300"></canvas>
+  </div>
+
+  <div id="charts2">
+    <canvas id="revenueChart" width="740" height="320"></canvas>
+  </div>
+
+  <script src="analysis.js"></script>
+</body>
+</html>

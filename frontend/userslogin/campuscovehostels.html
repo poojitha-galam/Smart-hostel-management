@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In</title>
+  <link rel="stylesheet" href="campuscovehostels.css">
+</head>
+<body>
+  <div class="marquee-container">
+    <marquee>We are happy to inform you that we are ranked top 3 quality food maintain awards by fssai</marquee>
+  </div>
+
+  <div class="container">
+    <div id="heading">
+      <br><br><br><br>
+      <h2>Dream Dwell Hostels</h2>
+      <h4>"Your home away from home, without the price tag."</h4>
+    </div>
+
+    <div id="signup-show">
+      <h1 id="welcomeuser">HELLO FRIEND!</h1>
+      <p class="pcontentsignup">Enter your details and start your</p>
+      <p class="pcontentsignup">journey with us today</p>
+      <a href="http://127.0.0.1:5500/frontend/userssignup/campuscovehostels.html" id="signup-anchor">SIGN UP</a>
+    </div>
+
+    <div id="signupform">
+      <h1>SIGN IN</h1>
+      <form onsubmit="save(event)">
+        <input type="text" id="signin-email" class="signin-input" placeholder="Mobile Number" autocomplete="off" required><br>
+        <input type="password" id="signin-password" class="signin-input" placeholder="Password" required><br>
+        <p id="password-fail"></p>
+        <a href="http://127.0.0.1:5500/frontend/forgotpassword/forgot.html" style="font-size: small;" id="forget">Forgot your password?</a><br><br>
+        <p id="demo1"></p>
+        <button id="signin-btn" type="submit">SIGN IN</button>
+      </form>
+    </div>
+  </div>
+
+  <small><a>Privacy & Policy |</a></small>
+  <small><a style="margin-left: 10px;">T&C |</a></small>
+  <small style="margin-left: 10px;">
+    <a id="demo" href="mailto:218x1a0482@khitguntur.ac.in">help@campuscovehostels.com</a>
+  </small>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
+  <script src="campuscovehostels.js"></script>
+</body>
+</html>

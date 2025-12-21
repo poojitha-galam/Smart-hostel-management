@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hostel Management System</title>
+  <link rel="stylesheet" href="campuscove.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+<body>
+  <span id="heading">🏨 Campus Cove Hostels</span>
+  <span id="admin-name"></span>
+  <nav>
+    <a href="#" onclick="showSection('dashboard')" class="nav-item">Dashboard</a>
+    <a href="#" onclick="showSection('myprofile')">My Profile</a>
+    <a href="#" onclick="showSection('paymenthistory')">Payment History</a>
+    <a href="#" onclick="showSection('payment')">Make payment</a>
+    <a href="#" onclick="showSection('roomCount')">Roommates</a>
+    <a href="#" onclick="showSection('hostelanouncements')">Hostel Announcements</a>
+    <a href="#" onclick="showSection('monthPayments')">Support</a>
+    <a href="#" onclick="showSection('payment-history')">Vacate Request</a>
+    <a href="#" onclick="showSection('pendingMembers')">Meal Info</a>
+    <a href="#" onclick="showSection('wifipassword')">Know your Wifi Password</a><br>
+     <button type="button" id="logout" onclick="logout()">Logout</button>
+  </nav>
+
+
+
+  <!-- Add Member Section -->
+  <div id="myprofile" class="content-section hidden">
+
+    <p id="name"></p><br>
+    <p id="mobilenumber"></p><br>
+    <p id="roomnumber"></p><br>
+    <p id="college"></p>
+    <br>
+    <p id="branch"></p><br>
+    <p id="joindate"></p>
+
+
+  </div>
+
+  <div id="dashboard" class="content-section hidden">
+  <div id="totalusersbox">
+    <b>Total Stay Days</b>
+    <p id="count"></p>
+  </div><br>
+  <div id="totalpending">
+    <b>Present Month Payment</b>
+    <p id="isdue"></p>
+  </div>
+</div>
+  <div id="wifipassword" class="content-section hidden">
+    <h3>Your Wifi Password is Raj133331@</h3>
+  </div>
+
+  
+
+  <!-- Member List Section -->
+  <div id="memberList" class="content-section hidden">
+    <h3>All Members</h3>
+    <input type="text" id="search" placeholder="Search...">
+    <button type="button" id="search-btn">Search</button>
+    <table id="memberTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Room</th>
+          <th>Branch</th>
+          <th>College</th>
+          <th>Joining Date</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>  
+
+    <div id="paymenthistory" class="content-section hidden">
+    <h3>Payment History</h3>
+    <table id="paymenthistoryTable">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Txn Id</th>
+          <th>Payment Mode</th>
+          <th>Payment Date</th>
+          <th>Payment Month</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+
+  <!-- Payment Section -->
+  <div id="payment" class="content-section hidden">
+    <h3>Add Payment</h3>
+    <form id="paymentForm" autocomplete="off">
+      <input type="text" id="payPhone" placeholder="Enter Number"><br>
+      <span id="verifyName"></span><br>
+      <select id="month" required><br><br>
+        <option value="">Select Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select><br><br>
+      <input type="number" id="amount" placeholder="Amount" required autocomplete="off" value="6000" disabled><br><br> 
+      <button type="button" id="paymentsubmit-btn">Make Payment</button>
+    </form>
+
+  </div>
+
+  <div id="payment-history" class="content-section hidden">
+    <h3>Vacate Request</h3>
+    <ul id="paymentHistory">Please kindly contact us, or else report at reception</ul>
+  </div>
+
+  <!-- Room-wise Members Section -->
+  <div id="roomCount" class="content-section hidden">
+    <h3>Room Members and Details</h3>
+    <p id="roomCountResult"></p>
+    <ul id="roomMemberList"></ul>
+  </div>
+
+  <!-- Day-wise Members Section -->
+  <div id="hostelanouncements" class="content-section hidden">
+    <h3 id="update">As per the the guide lines of the department of police,No one should buy drugs and bring into hostel.- Hostel Management</h3>
+  </div>
+
+  <!-- Month-wise Payments Section -->
+  <div id="monthPayments" class="content-section hidden">
+    <h3>Contact Us</h3>
+    <h5>6305967242</h5>
+    <p>info@camppuscovehostels@gmail.com</p>
+  </div>
+
+  <!-- Pending Members Section -->
+  <div id="pendingMembers" class="content-section hidden">
+    <button type="button" id="download">Download Menu</button>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="campuscove.js"></script>
+  </body>
+</html>

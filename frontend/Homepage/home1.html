@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hostel Management System</title>
+  <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+  <span id="heading">🏨 Dream Dwell Hostels</span>
+  <span id="admin-name">Galam Poojitha</span>
+  <nav>
+    <a href="#" onclick="showSection('dashboard')" class="nav-item">Dashboard</a>
+    <a href="#" onclick="showSection('addMember')">Add Member</a>
+    <a href="#" onclick="showSection('memberList')">Member List</a>
+    <a href="#" onclick="showSection('payment')">Manage Payment</a>
+    <a href="#" onclick="showSection('roomCount')">Room-wise Members</a>
+    <a href="#" onclick="showSection('dayWise')">Day-wise Members</a>
+    <a href="#" onclick="showSection('monthPayments')">Month-wise Payments</a>
+    <a href="#" onclick="showSection('payment-history')">Payment History</a>
+    <a href="#" onclick="showSection('pendingMembers')">Pending Members</a>
+    <a href="#" onclick="showSection('vacatedmembersList')">Vacate History</a>
+    <a href="http://127.0.0.1:5500/frontend/hostelanalysis/analysispage.html" class="nav-item" target="_blank">Analysis</a><br>
+     <button type="button" id="logout" onclick="logout()">Logout</button>
+  </nav>
+
+
+
+  <!-- Add Member Section -->
+  <div id="addMember" class="content-section">
+    <h3>Add / Update Member</h3>
+    <form id="memberForm" autocomplete="off">
+      <input type="hidden" id="memberId">
+      <input type="text" id="name" placeholder="Name" required autocomplete="off">
+      <input type="text" id="room" placeholder="Room" required autocomplete="off">
+      <input type="text" id="branch" placeholder="Branch" required autocomplete="off">
+      <input type="text" id="college" placeholder="College" required autocomplete="off">
+      <input type="date" id="joiningDate" placeholder="Joining Date" required autocomplete="off"><br><br>
+      <input type="text" id="phone" placeholder="Phone" required autocomplete="off"><br><br><br>
+      <button type="submit">Add Member</button>      
+      <button type="reset" id="reset">Reset</button>      
+    </form>
+    <br>
+  </div>
+
+  <div id="dashboard" class="content-section hidden">
+  <div id="totalusersbox">
+    <b>Total Hostlers</b>
+    <p id="count"></p>
+  </div><br>
+  <div id="totalpending">
+    <b>Present Month Dues</b>
+    <p id="totaldue"></p>
+  </div><br>
+  <div id="analysis">
+    <b id="analysisicon">Analysis</b>
+    <a href="http://127.0.0.1:5500/frontend/hostelanalysis/analysispage.html" id="analysislink">click here</a>
+  </div>
+</div>
+
+  
+
+  <!-- Member List Section -->
+  <div id="memberList" class="content-section hidden">
+    <h3>All Members</h3>
+    <input type="text" id="search" placeholder="Search...">
+    <button type="button" id="search-btn">Search</button>
+    <table id="memberTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Room</th>
+          <th>Branch</th>
+          <th>College</th>
+          <th>Joining Date</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+
+<!--vacated members details-->
+  
+
+    <div id="vacatedmembersList" class="content-section hidden">
+    <h3>All Members</h3>
+    <input type="text" id="" placeholder="Search...">
+    <button type="button" id="">Search</button>
+    <table id="vacatemembersTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Room</th>
+          <th>Branch</th>
+          <th>College</th>
+          <th>Joining Date</th>
+          <th>Phone</th>
+          <th>Vacate Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+
+  <!-- Payment Section -->
+  <div id="payment" class="content-section hidden">
+    <h3>Add Payment</h3>
+    <form id="paymentForm" autocomplete="off">
+      <input type="text" id="payPhone" placeholder="Phone Number" required autocomplete="off">
+      <span id="verifyName" class="verify-name"></span><br><br>
+      <select id="month" required><br><br>
+        <option value="">Select Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select><br><br>
+      <input type="date" id="paymentDate" placeholder="Payment Date" required autocomplete="off"><br><br>
+      <input type="number" id="amount" placeholder="Amount" required autocomplete="off"><br><br>
+      <input type="text" id="txnId" placeholder="Transaction ID" required autocomplete="off"><br><br>
+      <select id="modeofpayment">
+        <option>Mode Of payment</option>
+        <option>Cash</option>
+        <option>Upi</option>
+    </select><br><br>
+      <button type="submit">Add Payment</button>
+    </form>
+
+  </div>
+
+  <div id="payment-history" class="content-section hidden">
+    <h3>Fetch Payment History</h3>
+    <input type="text" id="searchPhone" placeholder="Enter Phone Number" autocomplete="off">
+    <button onclick="fetchPaymentHistory()">Fetch History</button>
+    <ul id="paymentHistory"></ul>
+  </div>
+
+  <!-- Room-wise Members Section -->
+  <div id="roomCount" class="content-section hidden">
+    <h3>Room-wise Members and Details</h3>
+    <select id="roomSelect" onchange="showRoomMembers()">
+      <option value="" selected disabled>Select Room</option>
+      <option>101</option>
+      <option>102</option>
+      <option>103</option>
+      <option>104</option>
+      <option>105</option>
+      <option>201</option>
+      <option>202</option>
+      <option>203</option>
+      <option>204</option>
+      <option>205</option>
+      <option>301</option>
+      <option>302</option>
+      <option>303</option>
+      <option>304</option>
+      <option>305</option>
+      <option>401</option>
+      <option>402</option>
+      <option>403</option>
+      <option>404</option>
+      <option>405</option>
+      <option>501</option>
+      <option>502</option>
+      <option>503</option>
+      <option>504</option>
+      <option>505</option>
+    </select>
+    <p id="roomCountResult"></p>
+    <ul id="roomMemberList"></ul>
+  </div>
+
+  <!-- Day-wise Members Section -->
+  <div id="dayWise" class="content-section hidden">
+    <h3>Day-wise Members</h3>
+    <select id="daySelect" onchange="showDayWiseMembers()">
+      <option value="">Select Day</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+      <option>13</option>
+      <option>14</option>
+      <option>15</option>
+      <option>16</option>
+      <option>17</option>
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+      <option>21</option>
+      <option>22</option>
+      <option>23</option>
+      <option>24</option>
+      <option>25</option>
+      <option>26</option>
+      <option>27</option>
+      <option>28</option>
+      <option>29</option>
+      <option>30</option>
+      <option>31</option>
+    </select>
+    <ul id="dayWiseList"></ul>
+  </div>
+
+  <!-- Month-wise Payments Section -->
+  <div id="monthPayments" class="content-section hidden">
+    <h3>Month-wise Payments</h3>
+    <select id="paymentMonthSelect" onchange="showMonthPayments()">
+      <option value="">Select Month</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <p id="totalAmount"></p>
+    <table id="monthPaymentTable">
+      <thead>
+        <tr>
+          <th>Phone Number</th>
+          <th>Amount</th>
+          <th>Txn Id</th>
+          <th>Payment Mode</th>
+          <th>Payment Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Pending Members Section -->
+  <div id="pendingMembers" class="content-section hidden">
+    <button type="button" id="remaindersend" onclick="remainder()">Send Remainder</button><br>
+    <p id="sendingremainder">Sending Remainder...</p>
+    <h3>Pending Amount due Members</h3>
+    <select id="pendingMonthSelect" onchange="showPendingMembers()">
+      <option value="">Select Month</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <ul id="pendingMemberList"></ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="home.js"></script>
+  </body>
+</html>
