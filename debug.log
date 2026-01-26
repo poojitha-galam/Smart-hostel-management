@@ -1,4 +1,1 @@
-[12956:10100:1229/110930.359:VERBOSE1:installer.cc(429)] "C:\Users\galam\Downloads\ChromeSetup.exe" --install=appguid={8A69D345-D564-463C-AFF1-A69D9E530F96}&iid={4478CB12-0B49-91DE-8614-10E31169FC12}&lang=en&browser=5&usagestats=1&appname=Google%20Chrome&needsadmin=prefers&ap=x64-statsdef_1&brand=ONGR&installdataindex=empty --enable-logging --vmodule=*/components/winhttp/*=1,*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
-[12956:10100:1229/111535.703:VERBOSE1:installer.cc(538)] Metainstaller WMain returned: 73500, Windows error: 0
-[11388:17732:0123/215129.551:VERBOSE1:installer.cc(429)] "C:\Users\galam\Downloads\ChromeSetup (1).exe" --install=appguid={8A69D345-D564-463C-AFF1-A69D9E530F96}&iid={BD8D6836-66DB-2F87-6D3E-BA50FD521FFA}&lang=en-GB&browser=5&usagestats=1&appname=Google%20Chrome&needsadmin=prefers&ap=x64-statsdef_1&installdataindex=empty --enable-logging --vmodule=*/components/winhttp/*=1,*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
-[11388:17732:0123/215207.081:VERBOSE1:installer.cc(538)] Metainstaller WMain returned: 73500, Wi
+
