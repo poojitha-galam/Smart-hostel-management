@@ -3,7 +3,7 @@
 A web-based application for managing hostel operations such as room allocation, student registration, and payment tracking.  
 Developed with **Node.js**, **Express**, and **MongoDB**, it provides an easy interface for both administrators and students.
 
----
+
 
 ## 🚀 Features
 
