@@ -3,8 +3,6 @@
 A web-based application for managing hostel operations such as room allocation, student registration, and payment tracking.  
 Developed with **Node.js**, **Express**, and **MongoDB**, it provides an easy interface for both administrators and students.
 
-
-
 ## 🚀 Features
 
 - 🧾 Student registration and profile management  
@@ -13,14 +11,11 @@ Developed with **Node.js**, **Express**, and **MongoDB**, it provides an easy in
 - 🔐 Secure authentication system  
 - 🌐 Frontend built with HTML, CSS, and JavaScript  
 
----
-
 ## 🧩 Tech Stack
 
 - **Backend:** Node.js, Express.js, MongoDB, Mongoose  
 - **Frontend:** HTML, CSS, JavaScript  
 
----
 
 ## ⚙️ Setup Instructions
 
