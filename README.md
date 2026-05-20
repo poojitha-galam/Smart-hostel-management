@@ -25,7 +25,7 @@ Developed with **Node.js**, **Express**, and **MongoDB**, it provides an easy in
 ## ⚙️ Setup Instructions
 
 1. **Clone the repository**
-   ```bash
+   bash
    git clone https://github.com/your-username/hostelmanagement.git
    cd hostelmanagement
 
